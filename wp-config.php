@@ -25,7 +25,7 @@ define('DB_USER', 'eadmin');
 define('DB_PASSWORD', '3l3phant');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'elephantpoc.cajxef5dsndk.us-west-2.rds.amazonaws.com:3306');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
