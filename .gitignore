@@ -1,10 +1,26 @@
-#################
+*.log
+.htaccess
+sitemap.xml
+sitemap.xml.gz
+wp-content/advanced-cache.php
+wp-content/backup-db/
+wp-content/backups/
+wp-content/blogs.dir/
+wp-content/cache/
+wp-content/upgrade/
+wp-content/uploads/
+wp-content/wp-cache-config.php
+wp-content/plugins/hello.php
 
-WordPress
+/readme.html
+/license.txt
 
-#################
+
 .git-rewrite/
 local-config.php
+wp-config-local.php
+env.php
+info.php
 .elasticbeanstalk/
 *.local.*
 *.remote.*
@@ -22,8 +38,3 @@ AWSDevTools-RepositorySetup.sh
 #These are to ignore media files which we again DON'T want in our GIT Repo.
 wp-content/uploads/
 wp-content/cache/
-
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml

@@ -14,24 +14,51 @@
  * @package WordPress
  */
 
-// ** MySQL settings - You can get this info from your web host ** //
-/** The name of the database for WordPress */
-define('DB_NAME', 'wordpress');
+// // ** MySQL settings - You can get this info from your web host ** //
+// /** The name of the database for WordPress */
+// define('DB_NAME', 'wordpress');
+//
+// /** MySQL database username */
+// define('DB_USER', 'eadmin');
+//
+// /** MySQL database password */
+// define('DB_PASSWORD', '2g5xNR9APn0s8vkeGwsH');
+//
+// /** MySQL hostname */
+// define('DB_HOST', 'wp-ebs-poc-01.cajxef5dsndk.us-west-2.rds.amazonaws.com');
+//
+// /** Database Charset to use in creating database tables. */
+// define('DB_CHARSET', 'utf8mb4');
+//
+// /** The Database Collate type. Don't change this if in doubt. */
+// define('DB_COLLATE', '');
+
+//define('DB_NAME', 'innodb');
+define('DB_NAME', getenv('DB_NAME'));
 
 /** MySQL database username */
-define('DB_USER', 'eadmin');
+define('DB_USER', getenv('DB_USER'));
 
 /** MySQL database password */
-define('DB_PASSWORD', '2g5xNR9APn0s8vkeGwsH');
+define('DB_PASSWORD', getenv('DB_PASSWORD'));
 
 /** MySQL hostname */
-define('DB_HOST', 'wp-ebs-poc-01.cajxef5dsndk.us-west-2.rds.amazonaws.com');
+define('DB_HOST', getenv('DB_HOST'));
 
 /** Database Charset to use in creating database tables. */
-define('DB_CHARSET', 'utf8mb4');
+define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
+
+define('WP_HOME', getenv('WP_HOME'));
+
+define('WP_SITEURL', getenv('WP_SITEURL'));
+
+//Overrides - configuration with local version
+if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
+    include( dirname( __FILE__ ) . '/wp-config-local.php' );
+}
 
 /**#@+
  * Authentication Unique Keys and Salts.
