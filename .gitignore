@@ -21,7 +21,7 @@ local-config.php
 wp-config-local.php
 env.php
 info.php
-.elasticbeanstalk/
+ .elasticbeanstalk/
 *.local.*
 *.remote.*
 *.base.*
