@@ -14,6 +14,11 @@
  * @package WordPress
  */
 
+
+
+ define('WP_CACHE', true); //Added by WP-Cache Manager
+ define( 'WPCACHEHOME', dirname( __FILE__ ). '/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
+
 // // ** MySQL settings - You can get this info from your web host ** //
 //define('DB_NAME', getenv('DB_NAME'));
 if (strlen(getenv('DB_NAME')) !== 0 ){
@@ -39,6 +44,7 @@ if (strlen(getenv('DB_HOST')) !== 0 ){
 }
 
 /** Database Charset to use in creating database tables. */
+//define( 'WPCACHEHOME', '/Users/ace/Documents/projects/menagerie/wp-elasticbeanstalk/wp-content/plugins/wp-super-cache/' ); //Added by WP-Cache Manager
 define('DB_CHARSET', 'utf8');
 
 /** The Database Collate type. Don't change this if in doubt. */
@@ -52,6 +58,16 @@ if (strlen(getenv('WP_HOME')) !== 0 ){
 // // define('WP_SITEURL', getenv('WP_SITEURL'));
 if (strlen(getenv('WP_SITEURL')) !== 0 ){
   define('WP_SITEURL', getenv('WP_SITEURL'));
+}
+
+// // define('DBI_AWS_ACCESS_KEY_ID', getenv('DBI_AWS_ACCESS_KEY_ID'));
+if (strlen(getenv('DBI_AWS_ACCESS_KEY_ID')) !== 0 ){
+  define('DBI_AWS_ACCESS_KEY_ID', getenv('DBI_AWS_ACCESS_KEY_ID'));
+}
+
+// // define('DBI_AWS_SECRET_ACCESS_KEY', getenv('DBI_AWS_SECRET_ACCESS_KEY'));
+if (strlen(getenv('DBI_AWS_SECRET_ACCESS_KEY')) !== 0 ){
+  define('DBI_AWS_SECRET_ACCESS_KEY', getenv('DBI_AWS_SECRET_ACCESS_KEY'));
 }
 
 //Overrides - configuration with local version
