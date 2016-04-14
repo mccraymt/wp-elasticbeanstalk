@@ -15,35 +15,28 @@
  */
 
 // // ** MySQL settings - You can get this info from your web host ** //
-// /** The name of the database for WordPress */
-// define('DB_NAME', 'wordpress');
-//
-// /** MySQL database username */
-// define('DB_USER', 'eadmin');
-//
-// /** MySQL database password */
-// define('DB_PASSWORD', '2g5xNR9APn0s8vkeGwsH');
-//
-// /** MySQL hostname */
-// define('DB_HOST', 'wp-ebs-poc-01.cajxef5dsndk.us-west-2.rds.amazonaws.com');
-//
-// /** Database Charset to use in creating database tables. */
-// define('DB_CHARSET', 'utf8mb4');
-//
-// /** The Database Collate type. Don't change this if in doubt. */
-// define('DB_COLLATE', '');
+//define('DB_NAME', getenv('DB_NAME'));
+if (strlen(getenv('DB_NAME')) !== 0 ){
+  define('DB_NAME', getenv('DB_NAME'));
+}
 
-//define('DB_NAME', 'innodb');
-define('DB_NAME', getenv('DB_NAME'));
+// // /** MySQL database username */
+// // define('DB_USER', getenv('DB_USER'));
+if (strlen(getenv('DB_USER')) !== 0 ){
+  define('DB_USER', getenv('DB_USER'));
+}
 
-/** MySQL database username */
-define('DB_USER', getenv('DB_USER'));
+// // /** MySQL database password */
+// // define('DB_PASSWORD', getenv('DB_PASSWORD'));
+if (strlen(getenv('DB_PASSWORD')) !== 0 ){
+  define('DB_PASSWORD', getenv('DB_PASSWORD'));
+}
 
-/** MySQL database password */
-define('DB_PASSWORD', getenv('DB_PASSWORD'));
-
-/** MySQL hostname */
-define('DB_HOST', getenv('DB_HOST'));
+// // /** MySQL hostname */
+// // define('DB_HOST', getenv('DB_HOST'));
+if (strlen(getenv('DB_HOST')) !== 0 ){
+  define('DB_HOST', getenv('DB_HOST'));
+}
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
@@ -51,9 +44,15 @@ define('DB_CHARSET', 'utf8');
 /** The Database Collate type. Don't change this if in doubt. */
 define('DB_COLLATE', '');
 
-define('WP_HOME', getenv('WP_HOME'));
+// // define('WP_HOME', getenv('WP_HOME'));
+if (strlen(getenv('WP_HOME')) !== 0 ){
+  define('WP_HOME', getenv('WP_HOME'));
+}
 
-define('WP_SITEURL', getenv('WP_SITEURL'));
+// // define('WP_SITEURL', getenv('WP_SITEURL'));
+if (strlen(getenv('WP_SITEURL')) !== 0 ){
+  define('WP_SITEURL', getenv('WP_SITEURL'));
+}
 
 //Overrides - configuration with local version
 if ( file_exists( dirname( __FILE__ ) . '/wp-config-local.php' ) ) {
